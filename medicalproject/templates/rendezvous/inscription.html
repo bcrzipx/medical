@@ -1,0 +1,105 @@
+{% load  static %}
+<!DOCTYPE html>
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title> PRENDRE UN RENDEZ-VOUS </title>
+    <link rel="stylesheet" href="{% static '../static/css/rdv.css' %}">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+   </head>
+<body>
+  <div class="container">
+    <div class="title">INSERE MES DONNEES</div>
+    <div class="content">
+      <form action="{% url 'inscription' %}" method="post">
+        {% csrf_token %}
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Nom </span>
+            <input type="text" name="nom" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Prenom</span>
+            <input type="text" name="prenom"  required>
+          </div>
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="email" name="email"  required>
+          </div>
+          
+          <div class="input-box">
+            <span class="details">Date de Naissance</span>
+            <input type="date" name="datenaissance" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Téléphone</span>
+            <input type="text" name="telephone" required>
+          </div>
+          <div class="input-box">
+            <span class="details">adresse</span>
+            <input type="text" name="adresse" required>
+          </div>
+           <!--<div class="container1">
+            
+            <div class="select-btn">
+               
+                <span class="btn-text">Selectionner vos choix</span>
+                <span class="arrow-dwn">
+                    <i class="fa-solid fa-chevron-down"></i>
+                </span>
+            </div> 
+
+            <ul class="list-items">
+                <li class="item">
+                    <span class="checkbox">
+                        <i class="fa-solid fa-check check-icon"></i>
+                    </span>
+                    <span class="item-text">DROIT COMMERCIAL</span>
+                </li>
+                <li class="item">
+                    <span class="checkbox">
+                        <i class="fa-solid fa-check check-icon"></i>
+                    </span>
+                    <span class="item-text">DROIT PENAL</span>
+                </li>
+                <li class="item">
+                    <span class="checkbox">
+                        <i class="fa-solid fa-check check-icon"></i>
+                    </span>
+                    <span class="item-text">DROIT FAMILIAL</span>
+                </li>
+                
+                
+                
+            </ul>
+        </div>-->
+        </div>
+        <div class="gender-details">
+          <input type="radio" name="sexe" value="femme"  id="dot-1">
+          <input type="radio" name="sexe" value="homme" id="dot-2">
+          <span class="gender-title">Sexe</span>
+          <div class="category">
+            <label for="dot-1" class="dot1">
+            <span class="dot one"></span>
+            <span class="gender">Femme</span>
+          </label>
+          <label for="dot-2">
+            <span class="dot two"></span>
+            <span class="gender">Homme</span>
+          </label>
+          </div>
+
+        </div>
+        
+        <div class="button">
+          <input type="submit" value="Envoyer">
+        </div>
+      </form>
+    </div>
+  </div>
+<!-- <script src="app2.js"></script> -->
+</body>
+</html>
