@@ -35,8 +35,8 @@ class Rendezvous(models.Model):
             raise ValidationError("L'heure spécifiée est déjà occupée pour cette date.")
 
         # Check if heure is between 09:00 AM and 16:00 PM
-        if not (self.heure >= timezone.datetime.strptime("09:00", "%H:%M").time() and
-                self.heure <= timezone.datetime.strptime("16:00", "%H:%M").time()):
+        from datetime import time as time_class
+        if not (self.heure >= time_class(9, 0) and self.heure <= time_class(16, 0)):
             raise ValidationError("L'heure doit être comprise entre 09:00 AM et 16:00 PM.")
 
     def save(self, *args, **kwargs):
@@ -71,6 +71,6 @@ class Ordonnance(models.Model):
     contenue = models.TextField()
     consultation = models.ForeignKey(Consultation, on_delete=models.CASCADE)
     def __str__(self):
-      return f"ordonance de {self.consultation.rendezvous.malade.prenom} {self.consultation.rendezvous.malade.nom} le {self.date} à {self.heure}"
+      return f"Ordonnance de {self.consultation.rendezvous.malade.prenom} {self.consultation.rendezvous.malade.nom} le {self.date} à {self.heure}"
     
  

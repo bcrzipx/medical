@@ -4,11 +4,37 @@ Lib/
 Include/
 Scripts/
 pyvenv.cfg
+medicale/
 
 # Python
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+.Python
+*.so
 
 # Django
 db.sqlite3
+db.sqlite3-journal
+*.log
 .env
+.env.local
+
+# Static files (collected)
+static/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Migrations (optionnel - commentez si vous voulez versionner)
+# */migrations/*.py
+# !*/migrations/__init__.py

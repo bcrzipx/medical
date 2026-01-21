@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://icons8.com/icon/21323/close-window">
     
-    <link rel="stylesheet" href="{% static 'css/Style.css' %}">                                                                                                    
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">                                                                                                    
     <title>DR ASMAA ABIDINE</title>
 </head>
 <body>
@@ -21,44 +21,42 @@
                     <a href="{% url 'index' %}"> Dr ASMAA ABIDINE <br> MÉDCINE GÉNÉRALE</a>
                 </div>
                 <ul class="links">
-                    <li><a href="#">Acceuil</a></li>
-                    <li><a href="#a-propos">A propos</a></li>
-                    <li><a href="#Horaire">Horaire</a></li>
-                    <li><a href="#urgence">Urgence</a></li>
+                    <li><a href="#home">Accueil</a></li>
+                    <li><a href="#a-propos">À propos</a></li>
+                    <li><a href="#Horaire">Horaires</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <li><a href="../avis - Copie/Avis.html">Avis</a></li>
-                    <li><a href="{% url 'admin:index' %}">Se connecter</a></li>
+                    <li><a href="{% url 'admin:index' %}">Connexion</a></li>
                 </ul>
-                <a href="{% url 'rendezvous' %}" class="action_btn">prendre un rendez-vous</a>
+                <a href="{% url 'rendezvous' %}" class="action_btn">Prendre un rendez-vous</a>
                 <div class="toggle_btn">
                     <i class="fa-solid fa-bars"></i>
                 </div>
             </div>
             <div class="dropdown_menu">
-                <li><a href="#">Acceuil</a></li>
-                <li><a href="#a-propos">à propos</a></li>
-                <li><a href="#Horaire">horaire</a></li>
-                <li><a href="#urgence">urgence</a></li>
-                <li><a href="#contact">contact</a></li>
-                <li><a href="../avis/Avis.html">Avis</a></li>
-                <li><a href="{% url 'admin:index' %}">se connecter</a></li>
-                <li><a href="{% url 'rendezvous' %}" class="action_btn">prendre un rendez-vous</a></li>
+                <li><a href="#home">Accueil</a></li>
+                <li><a href="#a-propos">À propos</a></li>
+                <li><a href="#Horaire">Horaires</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="{% url 'admin:index' %}">Connexion</a></li>
+                <li><a href="{% url 'rendezvous' %}" class="action_btn">Prendre un rendez-vous</a></li>
             </div>
         
         </header>
         <!--home-->
         <section id="home">
            <div id="g-home">
-             <!-- <img src="images/imgd.jpg" id="imgd" ><br><br><br> -->
-             <h2>Dr . ASMAA ABIDINE</h2>
-             <h4> MÉDCINE GÉNÉRALE</h4><br><br>
-             <!-- <a href="../prendre-rdv - Copie/PrendreRDV.html" class="btn-reservation home_btn" id="btn1">prendre un rendez-vous</a> -->
+             <h2>Dr. ASMAA ABIDINE</h2>
+             <h4>MÉDECINE GÉNÉRALE</h4>
+             <div style="margin-top: 3rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+               <a href="{% url 'rendezvous' %}" class="action_btn" style="background: white; color: #0093AF; font-size: 1.1rem; padding: 1rem 2.5rem;">Prendre un rendez-vous</a>
+               <a href="{% url 'inscription' %}" style="background: transparent; color: white; border: 2px solid white; font-size: 1.1rem; padding: 1rem 2.5rem; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;">S'inscrire</a>
+             </div>
            </div>
         </section>
     </section>
     <!-- A propos section -->
     <section id="a-propos">
-        <h1 class="title">à propos</h1>
+        <h1 class="title">À propos</h1>
         <div class="img-desc">
            <div class="left">
                 <img src="{% static 'image/imgd.jpg' %}" alt="" srcset="">
@@ -79,23 +77,23 @@
         <!-- service section -->
     <section class="service" id="Horaire" >
         <div id="urgence">
-            <h1 class="title"  > Horaire et Urgence</h1>
+            <h1 class="title">Horaires et Urgences</h1>
         <div class="box" >
             <div class="card">
                 <i class="ic fa-regular fa-clock"></i>
                 <h3 class="tit">Horaire</h3>
                 <p class="par">
-                    Docteur asmaa abidine vous reçoit du lundi 
-                    au vendredi de 09h00 à 16h00 et samedi de 09h00 à 13h00
-                    uniquement sur rendez - vous.
+                    Le Dr. Asmaa Abidine vous reçoit du lundi 
+                    au vendredi de 09h00 à 16h00 et le samedi de 09h00 à 13h00
+                    uniquement sur rendez-vous.
                 </p>
             </div>
             <div class="card" >
                 <i class="ic fa-solid fa-hospital"></i>       
                 <h3 class="tit">Urgence</h3>
                 <p class="par">
-                    En cas d'urgence et d'indisponibilité du Docteur asmaa abidine.
-                    veuillez appeler le cabinet sur le numero 0522939974.
+                    En cas d'urgence et d'indisponibilité du Dr. Asmaa Abidine,
+                    veuillez appeler le cabinet au numéro : <strong>0522939974</strong>
                 </p>
             </div>
         </div>
@@ -105,7 +103,7 @@
     </section>
     <!-- contact section -->
     <section id="contact">
-        <h1 class="title" id="esp">Contact</h1>
+        <h1 class="title">Contact</h1>
         <div class="sec-contact">
             <div class="left-right">
                 <div class="left contact-all">
@@ -174,15 +172,13 @@
         : 'fa-solid fa-bars'
 
     }
-    let nav=document.querySelector('.navbar');
-    window.onscroll= function () {
-        if(this.scrollY>=20){
-           console.log('test');
-            nav.classList.add('show');
-
+    let header = document.querySelector('.header');
+    window.onscroll = function () {
+        if(this.scrollY >= 50){
+            header.classList.add('scrolled');
         }
         else{
-            nav.classList.remove('show');
+            header.classList.remove('scrolled');
         }
     }
     /* COMMENTAIRE */

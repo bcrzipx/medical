@@ -4,8 +4,9 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
-    <title> PRENDRE UN RENDEZ-VOUS </title>
-    <link rel="stylesheet" href="{% static '../static/css/rdv.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prendre un Rendez-vous - Dr. Asmaa Abidine</title>
+    <link rel="stylesheet" href="{% static 'css/rdv.css' %}">
     
 
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +16,18 @@
 <body>
  
   <div class="container">
-    <div class="title">PRENDRE UN RENDEZ-VOUS</div>
+    <div class="title">Prendre un Rendez-vous</div>
+    
+    {% if messages %}
+    <div class="messages">
+      {% for message in messages %}
+      <div class="alert alert-{{ message.tags }}">
+        {{ message }}
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+    
     <div id="myModal" class="modal">
       <div class="modal-content">
           <span class="close">&times;</span>
@@ -35,28 +47,28 @@
         {% csrf_token %}
         <div class="user-details">
           <div class="input-box">
-            <span class="details">Nom </span>
+            <span class="details">Nom <span style="color: red;">*</span></span>
             <input type="text" name="nom" required>
           </div>
           <div class="input-box">
-            <span class="details">Prenom</span>
+            <span class="details">Prénom <span style="color: red;">*</span></span>
             <input type="text" name="prenom"  required>
           </div>
           <div class="input-box">
-            <span class="details">Email</span>
+            <span class="details">Email <span style="color: red;">*</span></span>
             <input type="email" name="email"  required>
           </div>
           
           <div class="input-box">
-            <span class="details">Date de Rendez-vous</span>
+            <span class="details">Date de Rendez-vous <span style="color: red;">*</span></span>
             <input type="date" name="dateR" required>
           </div>
           <div class="input-box">
-            <span class="details">Heure de Rendez-vous</span>
+            <span class="details">Heure de Rendez-vous <span style="color: red;">*</span></span>
             <input type="time" name="heureR" required>
           </div>
           <div class="input-box">
-            <span class="details">Raison de Rendez-vous</span>
+            <span class="details">Raison de Rendez-vous <span style="color: red;">*</span></span>
             <input type="text" name="raisonR" id="myBtn" required>
           </div>
            <!--<div class="container1">
@@ -95,8 +107,8 @@
         </div>-->
         </div>
         <div class="gender-details">
-          <input type="radio" name="sexe" id="dot-1">
-          <input type="radio" name="sexe" id="dot-2">
+          <input type="radio" name="sexe" value="femme" id="dot-1" required>
+          <input type="radio" name="sexe" value="homme" id="dot-2" required>
           <span class="gender-title">Sexe</span>
           <div class="category">
             <label for="dot-1" class="dot1">
@@ -111,8 +123,11 @@
 
         </div>
         
+        <div style="text-align: center; margin-top: 1rem; color: var(--text-light); font-size: 0.9rem;">
+          <p>Vous n'êtes pas encore inscrit ? <a href="{% url 'inscription' %}" style="color: var(--primary-color); font-weight: 600; text-decoration: none;">S'inscrire ici</a></p>
+        </div>
         <div class="button">
-          <input type="submit" value="Envoyer">
+          <input type="submit" value="Confirmer le Rendez-vous">
         </div>
       </form>
 

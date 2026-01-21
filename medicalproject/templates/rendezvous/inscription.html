@@ -4,15 +4,27 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
-    <title> PRENDRE UN RENDEZ-VOUS </title>
-    <link rel="stylesheet" href="{% static '../static/css/rdv.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription - Dr. Asmaa Abidine</title>
+    <link rel="stylesheet" href="{% static 'css/rdv.css' %}">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
    </head>
 <body>
   <div class="container">
-    <div class="title">INSERE MES DONNEES</div>
+    <div class="title">Inscription Patient</div>
+    
+    {% if messages %}
+    <div class="messages">
+      {% for message in messages %}
+      <div class="alert alert-{{ message.tags }}">
+        {{ message }}
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+    
     <div class="content">
       <form action="{% url 'inscription' %}" method="post">
         {% csrf_token %}
@@ -94,8 +106,11 @@
 
         </div>
         
+        <div style="text-align: center; margin-top: 1rem; color: var(--text-light); font-size: 0.9rem;">
+          <p>Déjà inscrit ? <a href="{% url 'rendezvous' %}" style="color: var(--primary-color); font-weight: 600; text-decoration: none;">Prendre un rendez-vous</a></p>
+        </div>
         <div class="button">
-          <input type="submit" value="Envoyer">
+          <input type="submit" value="S'inscrire">
         </div>
       </form>
     </div>
