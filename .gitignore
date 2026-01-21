@@ -1,0 +1,14 @@
+# Virtual environment
+venv/
+Lib/
+Include/
+Scripts/
+pyvenv.cfg
+
+# Python
+__pycache__/
+*.pyc
+
+# Django
+db.sqlite3
+.env
